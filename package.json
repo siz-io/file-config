@@ -1,0 +1,27 @@
+{
+  "name": "file-config",
+  "version": "1.0.0",
+  "description": "Express middleware & JS lib for file read/edit file based configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siz-io/file-config.git"
+  },
+  "keywords": [
+    "file",
+    "configuration"
+  ],
+  "author": "guillaumervls",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/siz-io/file-config/issues"
+  },
+  "homepage": "https://github.com/siz-io/file-config#readme",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "standard": "^5.4.1"
+  }
+}
