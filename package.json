@@ -4,7 +4,8 @@
   "description": "Express middleware & JS lib for file read/edit file based configuration",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard",
+    "node": "node"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,13 @@
   },
   "homepage": "https://github.com/siz-io/file-config#readme",
   "devDependencies": {
-    "express": "^4.13.3",
     "standard": "^5.4.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "fs-extra": "^0.26.4",
+    "js-yaml": "^3.4.6",
+    "lodash": "^3.10.1"
   }
 }

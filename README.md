@@ -11,7 +11,6 @@ npm install file-config
 
 ## Use
 ### Configuration editing [example](example/editing-web-interface.js)
-To run :
 
 ```
 git clone https://github.com/siz-io/file-config.git
@@ -20,7 +19,7 @@ npm install
 node example/editing-web-interface.js
 ```
 
-Then browse [http://localhost:8080/conf/myfile](http://localhost:8080/conf/myfile)
+Then browse [http://localhost:8080/myconf/edit](http://localhost:8080/myconf/edit)
 
 ### Configuration reading [example](example/reader.js)
 

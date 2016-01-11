@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Config editor</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/toastr/2.1.2/toastr.min.css">
+  <style type="text/css" media="screen">
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+
+    #editor {
+      display: none;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 10px;
+      bottom: 60px;
+      width: 600px;
+      border-radius: 3px;
+      border: solid #ddd 1px;
+    }
+
+    .bottom {
+      left: 0;
+      right: 0;
+      margin: 0;
+      bottom: 10px;
+      position: absolute;
+      text-align: center;
+    }
+
+    .update {
+      outline: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #2829C8;
+      border-radius: 10000px;
+      padding: 10px 20px;
+      color: #fff;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="editor"><%= conf %></div>
+  <div class="bottom">
+    <div class="update">Update</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/ace/1.2.2/min/ace.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/toastr/2.1.2/toastr.min.js"></script>
+  <script>
+    (function () {
+      var editor = ace.edit('editor');
+      editor.getSession().setMode('ace/mode/yaml');
+      editor.setTheme('ace/theme/tomorrow');
+      $('#editor').css('display', 'block');
+      toastr.options.closeButton = true;
+
+      function update() {
+        $('.update').fadeOut(100);
+        $.ajax('update', {
+          contentType: 'text/plain',
+          method: 'post',
+          data: editor.getValue(),
+          success: function (data) {
+            if (!data.error) toastr.success('Update sucessful');
+            else toastr.error('Check file syntax');
+            $('.update').fadeIn(100);
+          },
+          error: function () {
+            toastr.error('Something went wrong, try refreshing the page');
+            $('.update').fadeIn(100);
+          }
+        })
+        return false;
+      }
+
+      $('.update').on('click', update)
+    }())
+  </script>
+</body>
+
+</html>
