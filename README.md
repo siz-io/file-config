@@ -21,7 +21,7 @@ node example/editing-web-interface.js
 
 Then browse [http://localhost:8080/myconf/edit](http://localhost:8080/myconf/edit)
 
-### Configuration reading [example](example/reader.js)
+### Configuration reading [example](example/read-from-code.js)
 
 ```
 git clone https://github.com/siz-io/file-config.git
