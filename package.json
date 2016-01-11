@@ -1,7 +1,7 @@
 {
   "name": "file-config",
   "version": "1.0.0",
-  "description": "Express middleware & JS lib for file read/edit file based configuration",
+  "description": "Express middleware & JS lib for reading/editing a file based configuration",
   "main": "index.js",
   "scripts": {
     "test": "standard",
